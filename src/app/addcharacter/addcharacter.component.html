@@ -1,0 +1,31 @@
+
+<div class="addCharacterDiv">
+  <h1 class="tableTitle">Enter Character Data</h1>
+  <form class = "tp-form" [formGroup]="addCharacterForm">
+    <mat-form-field appearance="fill" class = "tp-full-width">
+      <input matInput placeholder="Enter First Name" formControlName="firstName">
+      <mat-error>First Name field is mandatory.</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill" class = "tp-full-width">
+      <input matInput placeholder="Enter Last Name" formControlName="lastName">
+      <mat-error>Last Name field field is mandatory.</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill" class = "tp-full-width">
+      <input matInput placeholder="Enter picture URL" formControlName="picture">
+      <mat-error>Picture URL field is mandatory.</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill" class = "tp-full-width">
+      <input matInput placeholder="Enter Age" formControlName="age">
+      <mat-error>Picture URL field is mandatory.</mat-error>
+    </mat-form-field>
+    <section>
+      <div class="example-button-row">
+        <button mat-raised-button (click)="submitCharacterForm()">Save Character</button>
+        <button mat-raised-button (click)="cancelCharacterForm()">Cancel Character</button>
+      </div>
+    </section>
+  </form>
+</div>

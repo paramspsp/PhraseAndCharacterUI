@@ -1,0 +1,22 @@
+<div class="addPhraseDiv">
+  <h1 class="tableTitle">Enter Phrase Data</h1>
+  <form class = "tp-form" [formGroup]="addPhraseForm">
+  <mat-form-field appearance="fill" class = "tp-full-width">
+    <input matInput placeholder="Enter Character" formControlName="character">
+    <mat-error>Characer field field is mandatory.</mat-error>
+  </mat-form-field>
+
+  <br>
+  <mat-form-field appearance="fill" class = "tp-full-width">
+    <textarea matInput placeholder="Enter Phrase" formControlName="phrase"></textarea>
+    <mat-error>Phrase field field is mandatory.</mat-error>
+  </mat-form-field>
+    <section>
+      <div class="example-button-row">
+        <button mat-raised-button (click)="submitPhraseForm()">Save Phrase</button>
+        <button mat-raised-button (click)="cancelPhraseForm()">Cancel Phrase</button>
+      </div>
+    </section>
+  </form>
+</div>
+

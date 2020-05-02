@@ -1,0 +1,20 @@
+<h2>Edit Phrase Form</h2>
+<form [formGroup]="phraseEditForm" class="normal-form" (submit)="onSubmit()">
+      <div class="controles-container">
+        <input type="hidden" formControlName="_id">
+        <mat-form-field>
+          <input formControlName="character" matInput placeholder="Character*">
+          <mat-error>This field is mandatory.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input formControlName="phrase" matInput placeholder="Phrase*">
+          <mat-error>This field is mandatory.</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="controles-container">
+        <div class="button-row">
+          <button mat-raised-button color="primary" type="submit" >Submit</button>
+          <button mat-raised-button color="warn" (click)="onClear()">Clear</button>
+        </div>
+      </div>
+</form>

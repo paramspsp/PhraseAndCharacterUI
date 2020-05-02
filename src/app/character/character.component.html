@@ -1,0 +1,54 @@
+<br>
+<h1 class="tableTitle">Characters Data</h1>
+<div class="dataTableDiv">
+<mat-form-field>
+  <mat-label>Filter</mat-label>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Type the character here">
+</mat-form-field>
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+  <!-- ID Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> Id </th>
+    <td mat-cell *matCellDef="let element"> {{element._id}} </td>
+  </ng-container>
+
+  <!-- First Name Column -->
+  <ng-container matColumnDef="FirstName">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> First Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+  </ng-container>
+
+  <!-- Last Name Column -->
+  <ng-container matColumnDef="LastName">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+  </ng-container>
+
+  <!-- Picture Column -->
+  <ng-container matColumnDef="Picture">
+    <th mat-header-cell *matHeaderCellDef> Picture </th>
+    <td mat-cell *matCellDef="let element"> <img [src]="element.picture" width="40px" height="40px" /> </td>
+  </ng-container>
+
+  <!-- Age Column -->
+  <ng-container matColumnDef="Age">
+    <th mat-header-cell *matHeaderCellDef> Age </th>
+    <td mat-cell *matCellDef="let element"> {{element.age}} </td>
+  </ng-container>
+
+  <!-- Actions Column -->
+  <ng-container matColumnDef="actions">
+    <mat-header-cell *matHeaderCellDef><br>Edit / Delete</mat-header-cell>
+    <mat-cell *matCellDef="let element">
+      <button mat-icon-button (click)="onEdit(element._id)"><mat-icon>launch</mat-icon></button>
+      <button mat-icon-button color="warn" (click)="onDelete(element._id)"><mat-icon>delete_outline</mat-icon></button>
+    </mat-cell>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<mat-paginator [pageSizeOptions]="[10, 20, 30]" showFirstLastButtons></mat-paginator>
+</div>
+
